@@ -1,0 +1,4 @@
+{
+  "extends": ["@it-incubator/stylelint-config"]
+}
+
