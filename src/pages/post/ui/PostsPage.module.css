@@ -1,0 +1,9 @@
+.pageContainer {
+    margin: 2rem auto;
+    padding: 1rem;
+
+}
+
+.pageContent {
+    background-color: var(--on-primary);
+}
