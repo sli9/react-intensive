@@ -1,7 +1,7 @@
 import s from "./PostCard.module.css"
 import type { Post } from "@/widgets/postList"
 
-type Props = {
+type PostCardProps = {
   post: Post
 }
 
