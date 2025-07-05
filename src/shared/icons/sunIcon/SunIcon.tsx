@@ -1,6 +1,8 @@
+import type { CSSProperties } from "react"
+
 type IconProps = {
   className?: string
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 export const SunIcon = ({ className, style }: IconProps) => (

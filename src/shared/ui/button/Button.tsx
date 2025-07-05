@@ -7,6 +7,7 @@ type ButtonProps<T extends ElementType> = {
   as?: T
   variant?: "rounded" | "square"
   size?: "sm" | "md" | "lg"
+  fitContent?: boolean
 } & Omit<ComponentPropsWithRef<T>, "as">
 
 export function Button<T extends ElementType>({
@@ -15,15 +16,17 @@ export function Button<T extends ElementType>({
   children,
   variant = "square",
   size = "md",
+  fitContent = false,
   ...rest
 }: ButtonProps<T>): ReactElement {
   const Component = as || "button"
 
   const classNames = ` 
   ${s.button}
-  ${s[size]}
-  ${s[variant]}
-  ${className}`
+  ${size && s[size]}
+  ${variant && s[variant]}
+  ${className}
+  ${fitContent && s.fitContent}`
 
   return (
     <Component className={classNames} {...rest}>
