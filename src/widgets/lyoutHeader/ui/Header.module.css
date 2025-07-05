@@ -5,9 +5,9 @@
     right: 0;
     left: 0;
 
-    height: 70px;
+    height: var(--header-height);
     padding: 0 1rem;
 
-    background-color: var(--on-primary);
+    background-color: var(--bg-primary);
     box-shadow: 0 .375rem 1.5rem 0 rgb(140 152 164 / 13%);
 }
