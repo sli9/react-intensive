@@ -1,11 +1,14 @@
 import { MainLayout } from "@/shared/layouts"
 import { PostsPage } from "@/pages/post"
+import { ThemeProvider } from "@/shared/lib/theme"
 
 function App() {
   return (
-    <MainLayout>
-      <PostsPage />
-    </MainLayout>
+    <ThemeProvider>
+      <MainLayout>
+        <PostsPage />
+      </MainLayout>
+    </ThemeProvider>
   )
 }
 
