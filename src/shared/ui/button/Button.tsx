@@ -1,7 +1,7 @@
-import type { ComponentPropsWithRef, ElementType, ReactElement } from "react"
+import type { ComponentPropsWithRef, ElementType, ReactElement, ReactNode } from "react"
 
 type ButtonProps<T extends ElementType> = {
-  children?: React.ReactNode
+  children?: ReactNode
   className?: string
   as?: T
 } & Omit<ComponentPropsWithRef<T>, "as">
