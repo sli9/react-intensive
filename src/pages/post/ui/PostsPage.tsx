@@ -4,6 +4,8 @@ import { PageTitle } from "@/shared/ui/pageTitle"
 import { mockPosts, useFetchMockData } from "@/shared/mocks"
 import { filterByLength, PostLengthFilter } from "@/features/PostLengthFilter"
 import { useCallback, useMemo, useState } from "react"
+import { PostList } from "@/widgets/postList"
+import { PageTitle } from "@/shared/ui/pageTitle"
 
 export const PostsPage = () => {
   const { isLoading, data } = useFetchMockData(mockPosts)
