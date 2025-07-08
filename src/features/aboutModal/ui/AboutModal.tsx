@@ -1,25 +1,40 @@
-import { Modal } from "@/shared/ui/modal/Modal.tsx"
 import s from "./AboutModal.module.css"
 import { SparklesIcon } from "@/shared/icons/sparklesIcon/SparklesIcon.tsx"
+import { Button } from "@/shared/ui/button"
+import { Modal } from "@/shared/ui/modal"
 
-type ModalProps = {
-  isOpen: boolean
-  onClose: () => void
-}
-
-export const AboutModal = ({ isOpen, onClose }: ModalProps) => {
+export const AboutModal = () => {
   return (
-    <Modal open={isOpen} onClose={onClose} modalTitle="О проекте">
-      <div className={s.section}>
-        <h3 className={`flex-container ${s.sectionTitle}`}>
-          <SparklesIcon className={s.sectionIcon} />
-          Добро пожаловать в Project
-        </h3>
-        <p className={s.description}>
-          Project — это современное, многофункциональное приложение для постов, разработанное для демонстрации новейших
-          технологий веб-разработки. Создано с учетом производительности, доступности и пользовательского опыта.
-        </p>
-      </div>
+    <Modal>
+      <Modal.Toggle>
+        <Button fitContent>About</Button>
+      </Modal.Toggle>
+
+      <Modal.Content>
+        <Modal.Header>
+          <div className={s.sectionTitle}>
+            <SparklesIcon className={s.sectionIcon} />
+            Добро пожаловать в Project
+            <Modal.Toggle>
+              <Button variant="rounded" size="sm">
+                x
+              </Button>
+            </Modal.Toggle>
+          </div>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p className={s.description}>
+            Project — это современное, многофункциональное приложение для постов, разработанное для демонстрации
+            новейших технологий веб-разработки. Создано с учетом производительности, доступности и пользовательского
+            опыта.
+          </p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <p className={s.footerText}>Made with ❤️ using modern web technologies</p>
+        </Modal.Footer>
+      </Modal.Content>
     </Modal>
   )
 }

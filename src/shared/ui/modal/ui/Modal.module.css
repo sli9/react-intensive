@@ -11,6 +11,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
+    overflow-y: auto;
+
     min-width: 320px;
     max-height: 85vh;
     padding: 25px;
@@ -20,8 +22,10 @@
     box-shadow:var(--shadow-lg);
 }
 
-.closeIcon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+hr {
+    margin: 1.5rem 0;
+}
+
+.footer {
+    text-align: center;
 }
