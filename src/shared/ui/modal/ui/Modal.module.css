@@ -1,0 +1,19 @@
+
+    overflow-y: auto;
+
+    min-width: 320px;
+    max-height: 85vh;
+    padding: 25px;
+    border-radius: var(--border-radius);
+
+    background-color: var(--bg-card);
+    box-shadow:var(--shadow-lg);
+}
+
+hr {
+    margin: 1.5rem 0;
+}
+
+.footer {
+    text-align: center;
+}
