@@ -1,12 +1,14 @@
 import s from "./PostsPage.module.css"
-import { PostList } from "@/widgets/postList"
+import { PostListWithLoading } from "@/widgets/postList"
 import { PageTitle } from "@/shared/ui/pageTitle"
+import { mockPosts, useFetchMockData } from "@/shared/mocks"
 
 export const PostsPage = () => {
+  const { isLoading, data } = useFetchMockData(mockPosts)
   return (
     <div className={s.pageContainer}>
       <PageTitle>Home Page</PageTitle>
-      <PostList />
+      <PostListWithLoading isLoading={isLoading} posts={data} />
     </div>
   )
 }
