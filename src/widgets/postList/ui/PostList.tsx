@@ -1,13 +1,20 @@
 import s from "./PostList.module.css"
 import { PostCard } from "@/entities/post"
-import { mockPosts } from "@/shared/mocks"
+import type { Post } from "@/widgets/postList"
+import { withLoading } from "@/shared/lib/hoc"
 
-export const PostList = () => {
+type PostListProps = {
+  posts: Post[] | null
+}
+
+const PostList = ({ posts }: PostListProps) => {
   return (
     <div className={s.list}>
-      {mockPosts?.slice(0, 10).map((post) => (
+      {posts?.slice(0, 10).map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
     </div>
   )
 }
+
+export const PostListWithLoading = withLoading(PostList)
