@@ -4,7 +4,7 @@ type PostCardProps = {
   post: Post
 }
 
-export const PostCard = ({ post }: Props) => {
+export const PostCard = ({ post }: PostCardProps) => {
   return (
     <>
       <div>

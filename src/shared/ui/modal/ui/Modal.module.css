@@ -1,3 +1,15 @@
+.overlay {
+    position: absolute;
+    z-index: 2000;
+    inset: 0;
+    background: rgb(0 0 0 / 50%);
+}
+
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     overflow-y: auto;
 
@@ -6,8 +18,8 @@
     padding: 25px;
     border-radius: var(--border-radius);
 
-    background-color: var(--bg-card);
-    box-shadow:var(--shadow-lg);
+     background-color: var(--bg-card);
+     box-shadow:var(--shadow-lg);
 }
 
 hr {

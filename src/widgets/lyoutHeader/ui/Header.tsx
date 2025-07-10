@@ -1,5 +1,4 @@
 import s from "./Header.module.css"
-import { ThemeSwitcher } from "@/features/themeSwitcher"
 import { AboutModal } from "@/features/aboutModal"
 
 export const Header = () => {
@@ -8,7 +7,6 @@ export const Header = () => {
       <h1>logo</h1>
       <div className={`flex-container ${s.buttonsWrapper}`}>
         <AboutModal />
-        <ThemeSwitcher />
       </div>
     </header>
   )

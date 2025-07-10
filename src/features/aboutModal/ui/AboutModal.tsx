@@ -1,5 +1,4 @@
 import s from "./AboutModal.module.css"
-import { SparklesIcon } from "@/shared/icons/sparklesIcon/SparklesIcon.tsx"
 import { Button } from "@/shared/ui/button"
 import { Modal } from "@/shared/ui/modal"
 
@@ -13,7 +12,6 @@ export const AboutModal = () => {
       <Modal.Content>
         <Modal.Header>
           <div className={s.sectionTitle}>
-            <SparklesIcon className={s.sectionIcon} />
             Добро пожаловать в Project
             <Modal.Toggle>
               <Button variant="rounded" size="sm">
