@@ -1,0 +1,22 @@
+.label {
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: #3b82f6; /* blue-500 */
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 30%);
+}
