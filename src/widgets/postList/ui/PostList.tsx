@@ -1,7 +1,7 @@
 import s from "./PostList.module.css"
 import { PostCard } from "@/entities/post"
 import { mockPosts } from "@/shared/mocks"
-import { usePosts } from "@/features/postList/model/hooks/PostList.ts"
+import { usePosts } from "@/features/postList/model/hooks/usePostList.ts"
 
 export const PostList = () => {
   const { data: posts, isLoading } = usePosts(mockPosts)
