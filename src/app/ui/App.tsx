@@ -1,12 +1,8 @@
-import { MainLayout } from "@/shared/layouts"
-import { PostsPage } from "@/pages/post"
+import { RouterProvider } from "react-router"
+import { router } from "@/app/providers/router.tsx"
 
 function App() {
-  return (
-    <MainLayout>
-      <PostsPage />
-    </MainLayout>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
