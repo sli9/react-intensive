@@ -11,3 +11,9 @@
 .card:hover {
   transform: translateY(-2px);
 }
+
+.body {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
