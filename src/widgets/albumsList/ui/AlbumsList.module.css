@@ -1,0 +1,82 @@
+.albumsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.albumCard {
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+
+    text-decoration: none;
+
+    background: rgb(255 255 255 / 70%);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+
+    transition: all 0.3s ease;
+}
+
+.albumCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 10px 10px -5px rgb(0 0 0 / 4%);
+}
+
+.albumThumbnail {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.albumImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.albumCard:hover .albumImage {
+    transform: scale(1.05);
+}
+
+.albumOverlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 500;
+    color: white;
+
+    opacity: 0;
+    background: rgb(0 0 0 / 60%);
+
+    transition: opacity 0.3s ease;
+}
+
+.albumCard:hover .albumOverlay {
+    opacity: 1;
+}
+
+.albumInfo {
+    padding: 1.5rem;
+}
+
+.albumTitle {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    margin: 0 0 0.75rem;
+
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1f2937;
+}

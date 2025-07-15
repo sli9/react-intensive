@@ -1,1 +1,2 @@
-export { PostCard } from "./ui/PostCard.tsx"
+export { PostCard } from "./ui/postCard/PostCard"
+export { PostDetails } from "./ui/postDetails/PostDetails"
