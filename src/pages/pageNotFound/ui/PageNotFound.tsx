@@ -16,11 +16,11 @@ export const PageNotFound = () => {
         </div>
 
         <div className={s.actions}>
-          <Link to="/posts" className={styles.primaryButton}>
+          <Link to="/posts" className={s.primaryButton}>
             Go to Posts
           </Link>
 
-          <button onClick={() => window.history.back()} className={styles.secondaryButton}>
+          <button onClick={() => window.history.back()} className={s.secondaryButton}>
             Go Back
           </button>
         </div>
