@@ -1,11 +1,9 @@
 .card {
   padding: 1.5rem;
-  border: 1px solid rgb(255 255 255 / 20%);
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
 
-  background-color: rgb(255 255 255 / 70%);
-  backdrop-filter: blur(4px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%);
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-lg);
 
   transition: transform 0.2s ease;
 }

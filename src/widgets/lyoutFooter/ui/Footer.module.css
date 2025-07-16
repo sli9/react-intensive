@@ -1,6 +1,6 @@
 .footer {
-    color: var(--on-primary);
-    background-color: #020303;
+    color: var(--text);
+    background-color: var(--bg-primary);
 }
 
 .content {

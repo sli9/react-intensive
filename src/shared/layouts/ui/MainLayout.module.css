@@ -14,6 +14,6 @@
 
     width: 100%;
     max-width: 85%;
-    margin: 70px auto 0;
+    margin: var(--header-height) auto 0;
     padding: 0 1rem;
 }
