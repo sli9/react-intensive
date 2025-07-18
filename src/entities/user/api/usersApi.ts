@@ -1,5 +1,6 @@
 import { baseApi } from "@/app/api/baseApi.ts"
 import type { TUser, User } from "@/entities/user"
+import type { Post } from "@/entities/post"
 
 export const usersApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -7,7 +8,10 @@ export const usersApi = baseApi.injectEndpoints({
       query: () => "/users",
       transformResponse: (response: User[]) => response.map(({ id, name }) => ({ userId: id, userName: name })),
     }),
+    getUserPosts: builder.query<Post[], { userId: number }>({
+      query: ({ userId }) => `/users/${userId}/posts`,
+    }),
   }),
 })
 
-export const { useGetUsersQuery } = usersApi
+export const { useGetUsersQuery, useGetUserPostsQuery } = usersApi
