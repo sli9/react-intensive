@@ -47,11 +47,7 @@ const PostTitle = () => {
   )
 }
 
-type PostBodyProps = {
-  lineClamp?: number
-}
-
-const PostBody = ({ lineClamp }: PostBodyProps) => {
+const PostBody = ({ lineClamp }: { lineClamp?: number }) => {
   const { body } = usePostCardContext()
   return (
     <p className={s.body} style={{ WebkitLineClamp: lineClamp }}>
