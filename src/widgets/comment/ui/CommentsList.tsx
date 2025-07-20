@@ -10,7 +10,7 @@ type CommentListProps = {
 
 export const CommentsList = ({ postId }: CommentListProps) => {
   const [toggle, setToggle] = useState(false)
-  const [getComments, { data: comments, isLoading, isUninitialized }] = useLazyGetCommentsQuery()
+  const [getComments, { data: comments, isFetching, isUninitialized, isError, error }] = useLazyGetCommentsQuery()
 
   const handleGetComments = () => {
     if (isUninitialized) {
@@ -19,12 +19,19 @@ export const CommentsList = ({ postId }: CommentListProps) => {
     setToggle(!toggle)
   }
 
+  if (isFetching) return null
+
+  if (isError) {
+    console.error(error)
+    return <div>Что-то пошло не так</div>
+  }
+
   return (
     <>
       <ToggleCommentsButton
         onClick={handleGetComments}
         commentsAmount={comments?.length}
-        disabled={isLoading}
+        disabled={isFetching}
         className={s.button}
       />
       {toggle && comments?.map((comment) => <CommentCard comment={comment} key={comment.id} />)}

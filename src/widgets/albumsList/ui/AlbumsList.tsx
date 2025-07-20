@@ -6,10 +6,15 @@ type AlbumsListProps = {
 }
 
 export const AlbumsList = ({ userId }: AlbumsListProps) => {
-  const { data: albums, isLoading } = useGetAlbumsQuery({ userId })
+  const { data: albums, isFetching, isError, error } = useGetAlbumsQuery({ userId })
 
-  if (isLoading) {
+  if (isFetching) {
     return null
+  }
+
+  if (isError) {
+    console.error(error)
+    return <div>Что-то пошло не так</div>
   }
 
   if (!albums) {

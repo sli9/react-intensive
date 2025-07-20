@@ -4,13 +4,13 @@ import { useGetUsersQuery } from "@/entities/user"
 import { useSelector } from "react-redux"
 
 export const PostList = () => {
-  const { isLoading, isError, error } = useGetPostsQuery()
+  const { isFetching, isError, error } = useGetPostsQuery()
   useGetUsersQuery()
 
   const posts = useSelector(selectAllPosts)
 
-  if (isLoading) {
-    return <div>Loading...</div>
+  if (isFetching) {
+    return null
   }
 
   if (isError) {

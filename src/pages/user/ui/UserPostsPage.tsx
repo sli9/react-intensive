@@ -6,10 +6,15 @@ import { useGetUserPostsQuery } from "@/entities/user"
 export const UserPostsPage = () => {
   const { id: userId } = useParams()
 
-  const { data: userPosts, isLoading } = useGetUserPostsQuery({ userId: Number(userId) })
+  const { data: userPosts, isFetching, isError, error } = useGetUserPostsQuery({ userId: Number(userId) })
 
-  if (isLoading) {
-    return <div className={"flex-container"}>Загрузка...</div>
+  if (isFetching) {
+    return null
+  }
+
+  if (isError) {
+    console.error(error)
+    return <div>Что-то пошло не так</div>
   }
 
   if (!userPosts) {
