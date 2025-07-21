@@ -1,5 +1,5 @@
 import { baseApi } from "@/app/api/baseApi.ts"
-import type { Post } from "@/widgets/todoList"
+import type { Post } from "@/entities/post"
 
 export const postsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
