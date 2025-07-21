@@ -1,0 +1,26 @@
+.prioritySelect {
+    cursor: pointer;
+
+    min-width: 140px;
+    padding: 0.25rem 2rem 0.25rem 0.75rem;
+    border: 2px solid;
+    border-radius: var(--border-radius);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    background: var(--bg-primary);
+
+    transition: all 0.2s ease;
+}
+
+.prioritySelect:hover {
+    transform: translateY(-1px);
+    background: var(--bg-secondary);
+}
+
+.prioritySelect:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 10%);
+}

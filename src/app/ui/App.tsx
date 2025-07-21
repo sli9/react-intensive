@@ -1,13 +1,14 @@
-import { MainLayout } from "@/shared/layouts"
-import { PostsPage } from "@/pages/post"
+import { RouterProvider } from "react-router"
+import { router } from "@/app/providers/router.tsx"
 import { ThemeProvider } from "@/shared/lib/theme"
+import { StoreProvider } from "@/app/providers/storeProvider/StoreProvider.tsx"
 
 function App() {
   return (
     <ThemeProvider>
-      <MainLayout>
-        <PostsPage />
-      </MainLayout>
+      <StoreProvider>
+        <RouterProvider router={router} />
+      </StoreProvider>
     </ThemeProvider>
   )
 }

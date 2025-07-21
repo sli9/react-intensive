@@ -1,1 +1,5 @@
-export { PostCard } from "./ui/PostCard.tsx"
+export { PostCard } from "./ui/postCard/PostCard"
+export * from "./api/postsApi"
+export * from "./api/postsApi.types"
+export * from "./model/postsSlice.ts"
+export * from "./model/postsSelectors"

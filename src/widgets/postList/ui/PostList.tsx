@@ -1,12 +1,36 @@
 import s from "./PostList.module.css"
-import { PostCard } from "@/entities/post"
-import { mockPosts } from "@/shared/mocks"
+import { PostCard, selectAllPosts, useGetPostsQuery } from "@/entities/post"
+import { useGetUsersQuery } from "@/entities/user"
+import { useSelector } from "react-redux"
 
 export const PostList = () => {
+  const { isFetching, isError, error } = useGetPostsQuery()
+  useGetUsersQuery()
+
+  const posts = useSelector(selectAllPosts)
+
+  if (isFetching) {
+    return null
+  }
+
+  if (isError) {
+    console.error(error)
+    return <div>Что-то пошло не так</div>
+  }
+
+  if (!posts) {
+    return <div>Нет постов</div>
+  }
+
   return (
     <div className={s.list}>
-      {mockPosts?.slice(0, 10).map((post) => (
-        <PostCard key={post.id} post={post} />
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post}>
+          <PostCard.UserName />
+          <PostCard.PostTitle />
+          <PostCard.PostBody lineClamp={3} />
+          <PostCard.PostDetailsLink />
+        </PostCard>
       ))}
     </div>
   )
