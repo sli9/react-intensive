@@ -6,7 +6,7 @@ type CommentCardProps = {
 }
 export const CommentCard = ({ comment }: CommentCardProps) => {
   return (
-    <div key={comment.id} className={s.comment}>
+    <div className={s.comment}>
       <p>
         <strong>Author</strong>: {comment.name}
       </p>

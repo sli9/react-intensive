@@ -8,9 +8,14 @@ type CommentCardProps = {
 }
 export const AlbumCard = ({ album }: CommentCardProps) => {
   return (
-    <Link key={album.id} to={Paths.AlbumPhotos.getLink(album.id)} className={s.albumCard}>
+    <Link to={Paths.AlbumPhotos.getLink(album.id)} className={s.albumCard}>
       <div className={s.albumThumbnail}>
-        <img src={`https://picsum.photos/800/600?random=${album.id}`} alt={album.title} className={s.albumImage} />
+        <img
+          src={`https://picsum.photos/800/600?random=${album.id}`}
+          alt={album.title}
+          className={s.albumImage}
+          loading={"lazy"}
+        />
         <div className={s.albumOverlay}>
           <span>View Photos</span>
         </div>

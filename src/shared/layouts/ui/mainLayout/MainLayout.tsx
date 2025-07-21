@@ -1,17 +1,15 @@
-import type { ReactNode } from "react"
 import s from "./MainLayout.module.css"
 import { Header } from "@/widgets/lyoutHeader"
 import { Footer } from "@/widgets/lyoutFooter"
+import { Outlet } from "react-router"
 
-type Props = {
-  children: ReactNode
-}
-
-export const MainLayout = ({ children }: Props) => {
+export const MainLayout = () => {
   return (
     <div className={s.layout}>
       <Header />
-      <main className={s.main}>{children}</main>
+      <main className={s.main}>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   )
