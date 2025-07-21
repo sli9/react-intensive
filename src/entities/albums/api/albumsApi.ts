@@ -1,5 +1,5 @@
 import { baseApi } from "@/app/api/baseApi.ts"
-import type { Album } from "./albumsApi.types.ts"
+import type { Album, Photo } from "./albumsApi.types.ts"
 
 export const albumsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -8,7 +8,12 @@ export const albumsApi = baseApi.injectEndpoints({
         url: `users/${userId}/albums`,
       }),
     }),
+    getAlbumPhotos: builder.query<Photo[], { albumId: number }>({
+      query: ({ albumId }) => ({
+        url: `albums/${albumId}/photos`,
+      }),
+    }),
   }),
 })
 
-export const { useGetAlbumsQuery } = albumsApi
+export const { useGetAlbumsQuery, useGetAlbumPhotosQuery } = albumsApi
