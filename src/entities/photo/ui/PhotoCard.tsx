@@ -7,9 +7,14 @@ type PhotoCardProps = {
 
 export const PhotoCard = ({ photo }: PhotoCardProps) => {
   return (
-    <div key={photo.id} className={s.photoCard}>
+    <div className={s.photoCard}>
       <div className={s.photoContainer}>
-        <img src={`https://picsum.photos/800/600?random=${photo.id}`} alt={photo.title} className={s.photoImage} />
+        <img
+          src={`https://picsum.photos/800/600?random=${photo.id}`}
+          alt={photo.title}
+          className={s.photoImage}
+          loading={"lazy"}
+        />
       </div>
       <div className={s.photoInfo}>
         <h3 className={s.photoTitle}>{photo.title}</h3>
