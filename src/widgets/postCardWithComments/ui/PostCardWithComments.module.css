@@ -17,6 +17,7 @@
 }
 
 .button {
+  align-self: flex-start;
   border: none;
   background: none;
 }

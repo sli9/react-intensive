@@ -1,5 +1,5 @@
 import { mockComments } from "@/shared/mocks/mockComments.ts"
-import s from "./CommentList.module.css"
+import { CommentCard } from "@/entities/comment"
 
 type CommentListProps = {
   postId: number
@@ -11,12 +11,7 @@ export const CommentList = ({ postId }: CommentListProps) => {
   return (
     <>
       {comments ? (
-        comments.map((comment) => (
-          <div key={comment.id} className={s.comment}>
-            <p>Author: {comment.author}</p>
-            <p>- {comment.text}</p>
-          </div>
-        ))
+        comments.map((comment) => <CommentCard key={comment.id} comment={comment} />)
       ) : (
         <div>No comments</div>
       )}
