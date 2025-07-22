@@ -5,7 +5,11 @@ import { PostCard } from "@/entities/post"
 export const PostDetailsPage = () => {
   const { id: postId } = useParams()
 
-  const post = mockPosts[Number(postId) - 1]
+  const post = mockPosts.find((post) => post.id === Number(postId))
+
+  if (!post) {
+    return <div>Такого поста не существует</div>
+  }
 
   return (
     <PostCard post={post}>

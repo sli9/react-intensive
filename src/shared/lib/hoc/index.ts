@@ -1,1 +1,1 @@
-export { withSuspenseAndErrorBoundary } from "./ui/withSuspense/withSuspenseAndErrorBoundary"
+export { withSuspense } from "./ui/withSuspense/withSuspense.tsx"

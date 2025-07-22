@@ -1,17 +1,11 @@
 import s from "./PostCard.module.css"
 import type { Post } from "@/widgets/todoList"
-import { Link } from "react-router"
-import { Paths } from "@/shared/config"
-import { createContext, type ReactNode, useContext } from "react"
-
-const PostCardContext = createContext<Post | undefined>(undefined)
-const usePostCardContext = () => {
-  const context = useContext(PostCardContext)
-  if (!context) {
-    throw new Error("usePostCardContext must be used within a PostCardContextProvider")
-  }
-  return context
-}
+import { type ReactNode } from "react"
+import { PostCardContext } from "../../lib/PostCardContext.ts"
+import { UserName } from "@/entities/post/ui/postCard/postCardSubcomponents/UserName.tsx"
+import { PostTitle } from "@/entities/post/ui/postCard/postCardSubcomponents/PostTitle.tsx"
+import { PostBody } from "@/entities/post/ui/postCard/postCardSubcomponents/PostBody.tsx"
+import { PostDetailsLink } from "@/entities/post/ui/postCard/postCardSubcomponents/PostDetailsLink.tsx"
 
 type PostCardProps = {
   post: Post
@@ -23,30 +17,6 @@ export const PostCard = ({ post, children }: PostCardProps) => {
     <PostCardContext value={post}>
       <div className={s.card}>{children}</div>
     </PostCardContext>
-  )
-}
-
-const UserName = () => {
-  const { userId } = usePostCardContext()
-  return <Link to={Paths.UserPosts.getLink(userId)}>User ID: {userId}</Link>
-}
-
-const PostTitle = () => {
-  const { title } = usePostCardContext()
-  return <h3>{title}</h3>
-}
-
-const PostBody = () => {
-  const { body } = usePostCardContext()
-  return <p>{body}</p>
-}
-
-const PostDetailsLink = ({ text = "Read more" }: { text?: string }) => {
-  const { id } = usePostCardContext()
-  return (
-    <Link className={"link"} to={Paths.PostDetails.getLink(id)}>
-      {text}
-    </Link>
   )
 }
 
