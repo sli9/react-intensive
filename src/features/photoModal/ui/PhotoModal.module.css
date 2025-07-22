@@ -1,0 +1,17 @@
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.sectionIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--primary);
+}

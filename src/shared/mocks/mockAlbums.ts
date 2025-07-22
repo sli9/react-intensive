@@ -24,6 +24,60 @@ export const mockAlbums: Album[] = [
         url: "https://picsum.photos/800/600?random=3",
         title: "Cityscape",
       },
+      {
+        id: 4,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=1",
+        title: "Beach Sunset",
+      },
+      {
+        id: 5,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=2",
+        title: "Mountain View",
+      },
+      {
+        id: 6,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=3",
+        title: "Cityscape",
+      },
+      {
+        id: 7,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=1",
+        title: "Beach Sunset",
+      },
+      {
+        id: 8,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=2",
+        title: "Mountain View",
+      },
+      {
+        id: 9,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=3",
+        title: "Cityscape",
+      },
+      {
+        id: 10,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=1",
+        title: "Beach Sunset",
+      },
+      {
+        id: 11,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=2",
+        title: "Mountain View",
+      },
+      {
+        id: 12,
+        albumId: 1,
+        url: "https://picsum.photos/800/600?random=3",
+        title: "Cityscape",
+      },
     ],
   },
   {
@@ -32,13 +86,13 @@ export const mockAlbums: Album[] = [
     title: "Family Photos",
     photos: [
       {
-        id: 4,
+        id: 13,
         albumId: 2,
         url: "https://picsum.photos/800/600?random=4",
         title: "Family Dinner",
       },
       {
-        id: 5,
+        id: 14,
         albumId: 2,
         url: "https://picsum.photos/800/600?random=5",
         title: "Birthday Party",
@@ -51,13 +105,13 @@ export const mockAlbums: Album[] = [
     title: "Nature Walks",
     photos: [
       {
-        id: 6,
+        id: 15,
         albumId: 3,
         url: "https://picsum.photos/800/600?random=6",
         title: "Forest Path",
       },
       {
-        id: 7,
+        id: 16,
         albumId: 3,
         url: "https://picsum.photos/800/600?random=7",
         title: "Waterfall",
@@ -70,19 +124,19 @@ export const mockAlbums: Album[] = [
     title: "Travel Memories",
     photos: [
       {
-        id: 8,
+        id: 17,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=8",
         title: "Paris Visit",
       },
       {
-        id: 9,
+        id: 18,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=9",
         title: "Rome Colosseum",
       },
       {
-        id: 10,
+        id: 19,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=10",
         title: "Tokyo Street",
@@ -95,19 +149,19 @@ export const mockAlbums: Album[] = [
     title: "Travel Memories",
     photos: [
       {
-        id: 8,
+        id: 20,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=8",
         title: "Paris Visit",
       },
       {
-        id: 9,
+        id: 21,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=9",
         title: "Rome Colosseum",
       },
       {
-        id: 10,
+        id: 22,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=10",
         title: "Tokyo Street",
@@ -120,19 +174,19 @@ export const mockAlbums: Album[] = [
     title: "Travel Memories",
     photos: [
       {
-        id: 8,
+        id: 23,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=8",
         title: "Paris Visit",
       },
       {
-        id: 9,
+        id: 24,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=9",
         title: "Rome Colosseum",
       },
       {
-        id: 10,
+        id: 25,
         albumId: 4,
         url: "https://picsum.photos/800/600?random=10",
         title: "Tokyo Street",

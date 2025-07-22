@@ -1,0 +1,32 @@
+.overlay {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgb(0 0 0 / 50%);
+}
+
+.content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+
+    width: 90vw;
+    max-width: 800px;
+    max-height: 85vh;
+    padding: 20px;
+    border-radius: var(--border-radius);
+
+    background-color: var(--background);
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+}
+
+.closeIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
