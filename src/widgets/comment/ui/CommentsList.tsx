@@ -3,6 +3,7 @@ import { useState } from "react"
 import s from "./CommentsList.module.css"
 import { CommentCard } from "@/entities/comments"
 import { ToggleCommentsButton } from "@/features/commentToggles"
+import { ItemList } from "@/shared/ui/itemList"
 
 type CommentListProps = {
   postId: number
@@ -10,20 +11,13 @@ type CommentListProps = {
 
 export const CommentsList = ({ postId }: CommentListProps) => {
   const [toggle, setToggle] = useState(false)
-  const [getComments, { data: comments, isFetching, isUninitialized, isError, error }] = useLazyGetCommentsQuery()
+  const [getComments, { data: comments, isFetching, isUninitialized, isError }] = useLazyGetCommentsQuery()
 
   const handleGetComments = () => {
     if (isUninitialized) {
       getComments({ postId })
     }
     setToggle(!toggle)
-  }
-
-  if (isFetching) return null
-
-  if (isError) {
-    console.error(error)
-    return <div>Что-то пошло не так</div>
   }
 
   return (
@@ -34,7 +28,14 @@ export const CommentsList = ({ postId }: CommentListProps) => {
         disabled={isFetching}
         className={s.button}
       />
-      {toggle && comments?.map((comment) => <CommentCard comment={comment} key={comment.id} />)}
+      {toggle && (
+        <ItemList
+          isLoading={isFetching}
+          isError={isError}
+          items={comments}
+          renderItem={(comment) => <CommentCard comment={comment} />}
+        />
+      )}
     </>
   )
 }

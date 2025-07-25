@@ -1,31 +1,21 @@
 import s from "./AlbumsList.module.css"
 import { AlbumCard, useGetAlbumsQuery } from "@/entities/albums"
+import { ItemList } from "@/shared/ui/itemList"
 
 type AlbumsListProps = {
   userId: number
 }
 
 export const AlbumsList = ({ userId }: AlbumsListProps) => {
-  const { data: albums, isFetching, isError, error } = useGetAlbumsQuery({ userId })
-
-  if (isFetching) {
-    return null
-  }
-
-  if (isError) {
-    console.error(error)
-    return <div>Что-то пошло не так</div>
-  }
-
-  if (!albums) {
-    return <div className={"flex-container"}>Нет альбомов у пользователя ID: {userId}</div>
-  }
+  const { data: albums, isFetching, isError } = useGetAlbumsQuery({ userId })
 
   return (
-    <div className={s.albumsGrid}>
-      {albums.map((album) => (
-        <AlbumCard key={album.id} album={album} />
-      ))}
-    </div>
+    <ItemList
+      className={s.albumsGrid}
+      items={albums}
+      isLoading={isFetching}
+      isError={isError}
+      renderItem={(album) => <AlbumCard album={album} />}
+    />
   )
 }

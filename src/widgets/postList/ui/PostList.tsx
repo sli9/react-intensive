@@ -2,36 +2,28 @@ import s from "./PostList.module.css"
 import { PostCard, selectAllPosts, useGetPostsQuery } from "@/entities/post"
 import { useGetUsersQuery } from "@/entities/user"
 import { useSelector } from "react-redux"
+import { ItemList } from "@/shared/ui/itemList"
 
 export const PostList = () => {
-  const { isFetching, isError, error } = useGetPostsQuery()
+  const { isFetching, isError } = useGetPostsQuery()
   useGetUsersQuery()
 
   const posts = useSelector(selectAllPosts)
 
-  if (isFetching) {
-    return null
-  }
-
-  if (isError) {
-    console.error(error)
-    return <div>Что-то пошло не так</div>
-  }
-
-  if (!posts) {
-    return <div>Нет постов</div>
-  }
-
   return (
-    <div className={s.list}>
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post}>
+    <ItemList
+      className={s.list}
+      isLoading={isFetching}
+      isError={isError}
+      items={posts}
+      renderItem={(post) => (
+        <PostCard post={post}>
           <PostCard.UserName />
           <PostCard.PostTitle />
           <PostCard.PostBody lineClamp={3} />
           <PostCard.PostDetailsLink />
         </PostCard>
-      ))}
-    </div>
+      )}
+    />
   )
 }
