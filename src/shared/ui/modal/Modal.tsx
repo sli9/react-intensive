@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect } from "react"
+import { type PropsWithChildren, useEffect } from "react"
 import { createPortal } from "react-dom"
 import s from "./Modal.module.css"
 import { Button } from "@/shared/ui/button"
@@ -6,11 +6,10 @@ import { Button } from "@/shared/ui/button"
 type ModalProps = {
   open: boolean
   onClose: () => void
-  children: ReactNode
   modalTitle: string
 }
 
-export const Modal = ({ onClose, open, modalTitle, children }: ModalProps) => {
+export const Modal = ({ onClose, open, modalTitle, children }: PropsWithChildren<ModalProps>) => {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
