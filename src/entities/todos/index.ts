@@ -1,5 +1,5 @@
 export * from "./api/todosApi"
-export * from "./api/todosApi.types"
+export * from "./model/todosApi.types.ts"
 export { TodoCard } from "./ui/TodoCard"
 export * from "./model/todosSlice"
 export * from "./model/todosSelectors"

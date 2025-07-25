@@ -1,4 +1,4 @@
-export * from "./api/usersApi.types"
+export * from "./model/usersApi.types.ts"
 export * from "./api/usersApi"
 export * from "./model/usersSlice"
 export * from "./model/usersSelectors"

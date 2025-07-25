@@ -1,5 +1,5 @@
 import { baseApi } from "@/app/api/baseApi.ts"
-import type { Album, Photo } from "./albumsApi.types.ts"
+import type { Album, Photo } from "../../photo/model/albumsApi.types.ts"
 
 export const albumsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

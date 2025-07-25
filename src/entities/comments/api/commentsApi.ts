@@ -1,5 +1,5 @@
 import { baseApi } from "@/app/api/baseApi.ts"
-import type { Comment } from "./commentsApi.types.ts"
+import type { Comment } from "../model/commentsApi.types.ts"
 
 export const commentsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

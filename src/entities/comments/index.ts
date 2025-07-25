@@ -1,3 +1,3 @@
 export * from "./api/commentsApi"
-export * from "./api/commentsApi.types"
+export * from "./model/commentsApi.types.ts"
 export { CommentCard } from "./ui/CommentCard"

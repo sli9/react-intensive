@@ -1,5 +1,5 @@
 import { baseApi } from "@/app/api/baseApi.ts"
-import type { Todo, TTodo } from "./todosApi.types"
+import type { Todo, TTodo } from "../model/todosApi.types.ts"
 import { TodoPriority } from "@/entities/todos"
 
 export const todosApi = baseApi.injectEndpoints({
