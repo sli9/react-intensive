@@ -1,15 +1,11 @@
-import { Component, type ErrorInfo, type ReactNode } from "react"
-
-type Props = {
-  children: ReactNode
-}
+import { Component, type ErrorInfo, type PropsWithChildren } from "react"
 
 type State = {
   hasError: boolean
 }
 
-export class GlobalErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
+export class GlobalErrorBoundary extends Component<PropsWithChildren, State> {
+  constructor(props: PropsWithChildren) {
     super(props)
     this.state = { hasError: false }
   }

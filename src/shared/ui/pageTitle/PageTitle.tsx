@@ -1,10 +1,6 @@
-import type { ReactNode } from "react"
+import type { PropsWithChildren } from "react"
 import s from "./PageTitle.module.css"
 
-type Props = {
-  children?: ReactNode
-}
-
-export const PageTitle = ({ children }: Props) => {
+export const PageTitle = ({ children }: PropsWithChildren) => {
   return <h1 className={s.title}>{children}</h1>
 }
