@@ -1,8 +1,11 @@
 import s from "./PostCard.module.css"
-import type { Post } from "@/widgets/todoList"
 import { Link } from "react-router"
 import { Paths } from "@/shared/config"
 import { createContext, type ReactNode, useContext } from "react"
+import type { Post } from "@/entities/post"
+import { useSelector } from "react-redux"
+import { selectUserById } from "@/entities/user"
+import type { RootState } from "@/app/providers/store/store.ts"
 
 const PostCardContext = createContext<Post | undefined>(undefined)
 const usePostCardContext = () => {
@@ -26,10 +29,14 @@ export const PostCard = ({ post, children }: PostCardProps) => {
   )
 }
 
-const UserName = () => {
-  const { userId } = usePostCardContext()
+const UserName = ({ userId }: { userId: number }) => {
+  const user = useSelector((state: RootState) => selectUserById(state, userId))
 
-  return <Link to={Paths.UserPosts.getLink(userId)}>User ID: {userId}</Link>
+  return (
+    <Link to={Paths.UserPosts.getLink(userId)}>
+      User {user.userName} ID: {user.userId}
+    </Link>
+  )
 }
 
 const PostTitle = () => {

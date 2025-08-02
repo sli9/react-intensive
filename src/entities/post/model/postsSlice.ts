@@ -10,6 +10,9 @@ const postsSlice = createSlice({
     builder.addMatcher(postsApi.endpoints.getPosts.matchFulfilled, (state, action) => {
       postsAdapter.setAll(state, action.payload)
     })
+    builder.addMatcher(postsApi.endpoints.deletePost.matchFulfilled, (state, action) => {
+      postsAdapter.removeOne(state, action.meta.arg.originalArgs.postId)
+    })
   },
 })
 

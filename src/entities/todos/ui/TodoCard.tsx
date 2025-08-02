@@ -2,7 +2,7 @@ import s from "./TodoCard.module.css"
 import { changeTodoPriority, changeTodoStatus, TodoPriority, type TTodo } from "@/entities/todos"
 import { SelectTodoPriority } from "@/features/selectTodoPriority"
 import { useDispatch } from "react-redux"
-import type { AppDispatch } from "@/app/model/store.ts"
+import type { AppDispatch } from "@/app/providers/store/store.ts"
 import { CheckboxTodo } from "@/features/selectTodoPriority/ui/todoCheckbox/CheckboxTodo.tsx"
 
 type TodoCardProps = {

@@ -4,7 +4,7 @@ import { baseQuery } from "@/app/api/baseQuery.ts"
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: baseQuery,
-  tagTypes: ["Posts"],
+  tagTypes: ["Posts", "Comments"],
   endpoints: () => ({}),
 }).injectEndpoints({
   endpoints: () => ({}),
