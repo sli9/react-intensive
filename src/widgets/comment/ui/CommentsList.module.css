@@ -1,0 +1,17 @@
+.button {
+  cursor: pointer;
+
+  gap: 0.1rem;
+  align-items: start;
+
+  border: none;
+
+  background: none;
+
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  color: var(--accent);
+}

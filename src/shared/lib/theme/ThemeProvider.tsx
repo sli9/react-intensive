@@ -1,19 +1,7 @@
-import { createContext, type ReactNode, useEffect, useState } from "react"
+import { type PropsWithChildren, useEffect, useState } from "react"
+import { type Theme, ThemeContext as ThemeContext1 } from "./lib/ThemeContext.tsx"
 
-export type Theme = "light" | "dark"
-
-type ThemeContextType = {
-  theme: Theme
-  setTheme: (theme: Theme) => void
-}
-
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-type ThemeProviderProps = {
-  children: ReactNode
-}
-
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const savedTheme = localStorage.getItem("theme") as Theme
     return savedTheme || "light"
@@ -32,5 +20,5 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     setTheme(newTheme)
   }
 
-  return <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme }}>{children}</ThemeContext.Provider>
+  return <ThemeContext1 value={{ theme, setTheme: handleSetTheme }}>{children}</ThemeContext1>
 }

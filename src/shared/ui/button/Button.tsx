@@ -1,8 +1,7 @@
-import type { ComponentPropsWithRef, ElementType, ReactElement, ReactNode } from "react"
+import type { ComponentPropsWithRef, ElementType, PropsWithChildren, ReactElement } from "react"
 import s from "./Button.module.css"
 
 type ButtonProps<T extends ElementType> = {
-  children?: ReactNode
   className?: string
   as?: T
   variant?: "rounded" | "square"
@@ -18,7 +17,7 @@ export function Button<T extends ElementType>({
   size = "md",
   fitContent = false,
   ...rest
-}: ButtonProps<T>): ReactElement {
+}: PropsWithChildren<ButtonProps<T>>): ReactElement {
   const Component = as || "button"
 
   const classNames = ` 

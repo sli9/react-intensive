@@ -22,5 +22,6 @@ export const handleError = (result: QueryReturnValue<unknown, FetchBaseQueryErro
         break
     }
     console.log({ error })
+    //или в toaster
   }
 }
